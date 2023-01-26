@@ -56,6 +56,26 @@ public class UserRegistration {
             System.out.println("Email is Invalid");
 
         return result;
-}
+
+    }
+
+    public boolean validMobileNumber() {
+
+        System.out.println("Enter Mobile Number: ");
+        String MobileNumber = sc.next();
+        String regex = "^([+]\\d{2})?\\d{10}$";          // Country code is not mandatory
+        // String regex = "^[+][0-9]{2}[0-9]{10}$";          Country code is mandatory
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(MobileNumber);
+        boolean result = matcher.matches();
+        System.out.println(result);
+
+        if (result)
+            System.out.println("Mobile Number is Valid");
+        else
+            System.out.println("Mobile Number is Invalid");
+        return result;
+
+    }
 
 }
