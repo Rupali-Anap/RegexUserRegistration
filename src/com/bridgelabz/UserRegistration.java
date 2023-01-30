@@ -112,6 +112,7 @@ public class UserRegistration {
             System.out.println("Password is Invalid");
         return result;
     }
+
     public boolean validNumericPassword() {
 
         System.out.println("Enter numericPassword: ");
@@ -129,4 +130,20 @@ public class UserRegistration {
         return result;
     }
 
+    public boolean validSpecialPassword() {
+
+        System.out.println("Enter validSpecialPassword: ");
+        String SpecialPassword = sc.next();
+        String regex = "^(?=.*[A-z])(?=.*[0-9])(?=.*[@#$%^&*()-+=])([a-zA-Z0-9@._-]).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(SpecialPassword);
+        boolean result = matcher.matches();
+        System.out.println(result);
+
+        if (result)
+            System.out.println("Password is Valid");
+        else
+            System.out.println("Password is Invalid");
+        return result;
+    }
 }
