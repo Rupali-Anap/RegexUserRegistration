@@ -78,4 +78,21 @@ public class UserRegistration {
 
     }
 
+    public boolean validPassword() {
+
+        System.out.println("Enter Password: ");
+        String Password = sc.next();;
+        String regex = "^[a-zA-Z]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(Password);
+        boolean result = matcher.matches();
+        System.out.println(result);
+
+        if (result)
+            System.out.println("Password is valid");
+        else
+            System.out.println("Password is Invalid");
+        return result;
+    }
+
 }
