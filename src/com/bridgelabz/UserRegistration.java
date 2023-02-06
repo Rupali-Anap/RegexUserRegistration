@@ -146,4 +146,21 @@ public class UserRegistration {
             System.out.println("Password is Invalid");
         return result;
     }
+
+    public boolean validEMailSample() {
+
+        System.out.println("Enter validEMailSample: ");
+        String EmailSample = sc.next();
+        String regex = "^(?!.*@.*@)[a-z+_-]+(.[a-z0-9])*@[a-z0-9]+(.[a-z])*.[a-z]{2,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(EmailSample);
+        boolean result = matcher.matches();
+        System.out.println(result);
+
+        if (result)
+            System.out.println("EMail sample is Valid");
+        else
+            System.out.println("EMail sample is Invalid");
+        return result;
+    }
 }
